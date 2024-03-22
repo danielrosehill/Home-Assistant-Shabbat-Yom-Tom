@@ -129,15 +129,19 @@ mode: single
 
 This is V1.0 of my humble Shabbat indicator light. It’s a simple Zigbee E27 hanging off a socket. 
 
+![shabbat_light](images/shabbat_light.jpg)
+
 The next steps of the project are making this look good. I’m thinking of DIY-ing a custom lightbox.
 
-![shabbat_light (1)](images/shabbat_light (1).jpg)
+
 
 I also built a little monitoring dashboard just to check up on the condition of my sensors before Shabbat:
 
+![](images/dashboard.png)
 
 
-![shab_dashboard (1)](images/shab_dashboard (1).png)
+
+
 
 There are dozens of ideas I’ve already jotted down for how to take this further (next in line: send a notification 30 minutes before candle-lighting). But …. it’s a functional start.
 
