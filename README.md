@@ -20,7 +20,9 @@ You can use proprietary technologies and their ecosystems for setting up basic h
 
 But doing so hamstrings your abilities to truly customise and own your system before the get-go.
 
-![tech_stack (1)](images/tech_stack (1).jpg)
+![minipc](images/minipc.jpg)
+
+
 
 *My Home Assistant mini PC. Yes, I need a networking cabinet, router, and UPS. No, the weird white powder isn’t cocaine…*
 
