@@ -103,7 +103,7 @@ Etc.
 
 For instance, here's an automation that triggers a lighting scene for the start of Shabbat/Yom Tov when the helper toggle becomes true:
 
-```yaml
+```
 alias: Start of Shabbat / Yom Tov automation
 description: >-
   Activates the start of Shabbat / Yom Tov scene when the Shabbat or Yom Tov
@@ -121,5 +121,53 @@ action:
       entity_id: scene.start_of_shabbat
 mode: single
 
+```
+
+# Step 4: Configure The ‘Toggle Off’ Automations
+
+Finally we’re going to need to configure automations that reverse the toggle state (to off) when Shabbat or Hag ends.
+
+To save a bit of time we can use the ‘Duplicate’ button in ‘Automations’.
+
+Here’s the Shabbat one.
+
+```yaml
+alias: Shabbat over, Shabbat/Hag toggle off
+description: "When the Shabbat sensor reports 'false' we'll move the helper trigger to off too."
+trigger:
+  - platform: state
+    entity_id:
+      - sensor.hebcal_is_shabbat
+    to: "False"
+condition: []
+action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id:
+        - input_boolean.shabbat_mode
+    data: {}
+mode: single
+```
+
+Then do the same for the hagim/Yom Tov switch. If the sensor goes back to reporting ‘No Info’ we’ll move the toggle back over to false:
+
+```yaml
+alias: Hag is over, toggle goes to false
+description: >-
+  When the is_yomtov sensor reports 'No Info' (it's not Yom Tov) we'll move the
+  toggle back to false.
+trigger:
+  - platform: state
+    entity_id:
+      - sensor.hebcal_is_yomtov
+    to: No Info
+condition: []
+action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id:
+        - input_boolean.shabbat_mode
+    data: {}
+mode: single
 ```
 

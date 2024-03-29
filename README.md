@@ -145,6 +145,14 @@ I also built a little monitoring dashboard just to check up on the condition of 
 
 There are dozens of ideas I’ve already jotted down for how to take this further (next in line: send a notification 30 minutes before candle-lighting). But …. it’s a functional start.
 
+
+
+## Dashboard Repository
+
+I'm sharing the dashboards I build and update here:
+
+https://github.com/danielrosehill/Home-Assistant-Shabbat-Yom-Tov-Dashboard/tree/main
+
 Thanks for reading!
 
 *Daniel Rosehill*
